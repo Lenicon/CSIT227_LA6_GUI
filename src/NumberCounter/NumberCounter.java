@@ -16,7 +16,6 @@ public class NumberCounter extends JFrame {
     private final int LONG_PRESS_THRESHOLD = 800;   // Time to trigger continuous change (ms)
     private final int REPEAT_INTERVAL = 400;        // Interval for continuous change (ms)
 
-    private BigInteger currentCount;
 
     public NumberCounter(){
 
@@ -85,7 +84,7 @@ public class NumberCounter extends JFrame {
     }
 
     private void addCount(int n){
-        currentCount = new BigInteger(countField.getText().isBlank() ? "0":countField.getText().replaceAll("[^\\d-]|-(?!\\d)", ""));
+        BigInteger currentCount = new BigInteger(countField.getText().isBlank() ? "0":countField.getText().replaceAll("[^\\d-]|-(?!\\d)", ""));
         countField.setText(currentCount.add(BigInteger.valueOf(n)).toString());
     }
 

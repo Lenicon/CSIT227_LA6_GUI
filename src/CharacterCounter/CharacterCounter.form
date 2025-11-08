@@ -12,7 +12,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <component id="7102d" class="javax.swing.JLabel" binding="lineCountLabel">
+      <component id="7102d" class="javax.swing.JLabel">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -32,7 +32,7 @@
           <text value="0"/>
         </properties>
       </component>
-      <component id="92f0a" class="javax.swing.JLabel" binding="wordCountLabel">
+      <component id="92f0a" class="javax.swing.JLabel">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -62,7 +62,7 @@
           <text value="0"/>
         </properties>
       </component>
-      <component id="1d8e4" class="javax.swing.JLabel" binding="charCountLabel">
+      <component id="1d8e4" class="javax.swing.JLabel">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
