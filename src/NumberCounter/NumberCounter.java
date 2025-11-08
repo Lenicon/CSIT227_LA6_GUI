@@ -45,14 +45,14 @@ public class NumberCounter extends JFrame {
                 longPressDetectTimer = new Timer(LONG_PRESS_THRESHOLD, new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent evt) {
-                        // This fires ONCE after 800ms (LONG_PRESS_THRESHOLD)
+                        // This fires ONCE after (LONG_PRESS_THRESHOLD) ms
                         longPressDetectTimer.stop();
 
                         // 2. Start the 'rapid repeat' timer for continuous change
                         rapidRepeatTimer = new Timer(REPEAT_INTERVAL, new ActionListener() {
                             @Override
                             public void actionPerformed(ActionEvent evt) {
-                                addCount(longIncrement); // Fire every 50ms
+                                addCount(longIncrement); // Fire every (REPEAT_INTERVAL) ms
                             }
                         });
                         rapidRepeatTimer.setInitialDelay(0); // Start immediately
