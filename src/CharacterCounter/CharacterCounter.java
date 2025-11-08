@@ -6,6 +6,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
 
+
 public class CharacterCounter extends JFrame {
     private JTextArea textArea;
     private JPanel panelMain;
