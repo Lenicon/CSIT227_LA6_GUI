@@ -26,17 +26,12 @@ public class SurveyProgressIndicator extends JFrame{
     private JButton submitButton;
 
 
-    private JLabel nameLabel;
-    private JLabel emailLabel;
-    private JLabel q2Label;
-
-
     private final int totalQuestions = 4;
     private final ArrayList<MutableBoolean> bools;
     
     
     public SurveyProgressIndicator(){
-        createUIComponents();
+        progressBar.setMaximum(totalQuestions);
 
         setContentPane(panelMain);
         setTitle("Character Counter (Len.icon)");
@@ -136,15 +131,6 @@ public class SurveyProgressIndicator extends JFrame{
         });
     }
 
-    private void createUIComponents() {
-        if (progressBar != null){
-            progressBar.setMaximum(totalQuestions);
-        }
-
-        nameLabel.setLabelFor(nameField);
-        emailLabel.setLabelFor(emailField);
-        q2Label.setLabelFor(q2);
-    }
 
     private void updateProgress(MutableBoolean bool, boolean boolValue){
         bool.setValue(boolValue);

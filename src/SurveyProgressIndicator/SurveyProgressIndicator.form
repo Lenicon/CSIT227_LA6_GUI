@@ -38,21 +38,23 @@
                   <value value="0"/>
                 </properties>
               </component>
-              <component id="1df6b" class="javax.swing.JLabel" binding="nameLabel">
+              <component id="1df6b" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
                     <preferred-size width="32" height="28"/>
                   </grid>
                 </constraints>
                 <properties>
+                  <labelFor value="6f185"/>
                   <text value="Name:"/>
                 </properties>
               </component>
-              <component id="af7a9" class="javax.swing.JLabel" binding="emailLabel">
+              <component id="af7a9" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <labelFor value="f0642"/>
                   <text value="Email:"/>
                 </properties>
               </component>
@@ -85,11 +87,12 @@
                   <text value="1. Do you like me?"/>
                 </properties>
               </component>
-              <component id="cd022" class="javax.swing.JLabel" binding="q2Label">
+              <component id="cd022" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <labelFor value="64ce5"/>
                   <text value="2. Explain why or why not."/>
                 </properties>
               </component>
