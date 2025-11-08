@@ -11,10 +11,6 @@ class MutableBoolean {
         this(false);
     }
 
-    public void toggle(){
-        this.value = !this.value;
-    }
-
     public void setValue(boolean value){
         this.value = value;
     }

@@ -12,16 +12,14 @@ public class SurveyProgressIndicator extends JFrame{
 
     private JProgressBar progressBar;
 
-    private MutableBoolean emailBool, nameBool;
     private JTextField emailField;
     private JTextField nameField;
 
-    private MutableBoolean q1Bool;
-    private ButtonGroup q1group;
+    private final MutableBoolean q1Bool;
+    private final ButtonGroup q1group;
     private JRadioButton q1r1;
     private JRadioButton q1r2;
 
-    private MutableBoolean q2Bool;
     private JTextArea q2;
 
     private JButton clearButton;
@@ -29,7 +27,7 @@ public class SurveyProgressIndicator extends JFrame{
 
 
     private final int totalQuestions = 4;
-    private ArrayList<MutableBoolean> bools;
+    private final ArrayList<MutableBoolean> bools;
     
     
     public SurveyProgressIndicator(){
@@ -71,10 +69,10 @@ public class SurveyProgressIndicator extends JFrame{
         // Questionnaire
         bools = new ArrayList<>();
 
-        nameBool = new MutableBoolean();
-        emailBool = new MutableBoolean();
+        private final MutableBoolean nameBool = new MutableBoolean();
+        private final MutableBoolean emailBool = new MutableBoolean();
         q1Bool = new MutableBoolean();
-        q2Bool = new MutableBoolean();
+        private final MutableBoolean q2Bool = new MutableBoolean();
 
         setupTextComponentListener(nameField, nameBool);
         setupTextComponentListener(emailField, emailBool);
@@ -99,12 +97,7 @@ public class SurveyProgressIndicator extends JFrame{
                 // Check the logical status of the *entire* group
                 ButtonModel selectedModel = bgroup.getSelection();
 
-                if (selectedModel != null) {
-                    // Logic for when one option IS selected at the start
-                    updateProgress(bool, true);
-                } else {
-                    updateProgress(bool, false);
-                }
+                updateProgress(bool, selectedModel != null);
             }
         };
 
