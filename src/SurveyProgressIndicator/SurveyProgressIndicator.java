@@ -69,10 +69,10 @@ public class SurveyProgressIndicator extends JFrame{
         // Questionnaire
         bools = new ArrayList<>();
 
-        private final MutableBoolean nameBool = new MutableBoolean();
-        private final MutableBoolean emailBool = new MutableBoolean();
+        final MutableBoolean nameBool = new MutableBoolean();
+        final MutableBoolean emailBool = new MutableBoolean();
         q1Bool = new MutableBoolean();
-        private final MutableBoolean q2Bool = new MutableBoolean();
+        final MutableBoolean q2Bool = new MutableBoolean();
 
         setupTextComponentListener(nameField, nameBool);
         setupTextComponentListener(emailField, emailBool);
