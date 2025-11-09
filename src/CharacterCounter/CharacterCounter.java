@@ -13,11 +13,13 @@ public class CharacterCounter extends JFrame {
 
     private JTextField specificField;
     private JLabel specificCountNum;
+    private JButton btnCaseToggle;
 
     private JLabel wordCountNum;
     private JLabel lineCountNum;
     private JLabel charCountNum;
-    private JButton btnCaseToggle;
+
+
 
 
     public CharacterCounter(){
