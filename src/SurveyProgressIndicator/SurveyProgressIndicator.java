@@ -3,7 +3,6 @@ package SurveyProgressIndicator;
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.JTextComponent;
-import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
@@ -12,29 +11,28 @@ public class SurveyProgressIndicator extends JFrame{
 
     private JProgressBar progressBar;
 
-    private JTextField emailField;
     private JTextField nameField;
+    private JTextField dobField;
+    private JTextField emailField;
+    private JTextField contactField;
 
-    private final MutableBoolean q1Bool;
-    private final ButtonGroup q1group;
-    private JRadioButton q1r1;
-    private JRadioButton q1r2;
-
-    private JTextArea q2;
+    private final MutableBoolean genderBool;
+    private final ButtonGroup genderGroup;
+    private JRadioButton genderR1;
+    private JRadioButton genderR2;
+    private JRadioButton genderR3;
 
     private JButton clearButton;
     private JButton submitButton;
 
-
-    private final int totalQuestions = 4;
+    private int TOTAL_FIELDS = 0;
     private final ArrayList<MutableBoolean> bools;
     
     
     public SurveyProgressIndicator(){
-        progressBar.setMaximum(totalQuestions);
 
         setContentPane(panelMain);
-        setTitle("Character Counter (Len.icon)");
+        setTitle("Survey Progress Indicator (Len.icon)");
         setSize(500, 500);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,11 +42,12 @@ public class SurveyProgressIndicator extends JFrame{
         clearButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                emailField.setText("");
                 nameField.setText("");
-                q1group.clearSelection();
-                updateProgress(q1Bool, false);
-                q2.setText("");
+                dobField.setText("");
+                contactField.setText("");
+                emailField.setText("");
+                genderGroup.clearSelection();
+                updateProgress(genderBool, false);
             }
         });
 
@@ -70,22 +69,26 @@ public class SurveyProgressIndicator extends JFrame{
         bools = new ArrayList<>();
 
         final MutableBoolean nameBool = new MutableBoolean();
+        final MutableBoolean dobBool = new MutableBoolean();
+        final MutableBoolean contactBool = new MutableBoolean();
         final MutableBoolean emailBool = new MutableBoolean();
-        q1Bool = new MutableBoolean();
-        final MutableBoolean q2Bool = new MutableBoolean();
+        genderBool = new MutableBoolean();
 
         setupTextComponentListener(nameField, nameBool);
+        setupTextComponentListener(dobField, dobBool);
+        setupTextComponentListener(contactField, contactBool);
         setupTextComponentListener(emailField, emailBool);
-        setupTextComponentListener(q2, q2Bool);
+
+        genderGroup = setupRadioButtons(new JRadioButton[] {genderR1, genderR2, genderR3}, genderBool);
 
 
-        q1group = setupRadioButtons(new JRadioButton[] {q1r1, q1r2}, q1Bool);
-
+        progressBar.setMaximum(TOTAL_FIELDS);
     }
 
     private ButtonGroup setupRadioButtons(JRadioButton[] radioButtons, MutableBoolean bool){
         ButtonGroup bgroup = new ButtonGroup();
         bools.add(bool);
+        TOTAL_FIELDS += 1;
 
         for (JRadioButton radioButton : radioButtons){
             bgroup.add(radioButton);
@@ -112,6 +115,8 @@ public class SurveyProgressIndicator extends JFrame{
 
     private void setupTextComponentListener(JTextComponent textComponent, MutableBoolean bool){
         bools.add(bool);
+        TOTAL_FIELDS += 1;
+
         textComponent.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -125,9 +130,7 @@ public class SurveyProgressIndicator extends JFrame{
             }
 
             @Override
-            public void changedUpdate(DocumentEvent e) {
-
-            }
+            public void changedUpdate(DocumentEvent e) {}
         });
     }
 
@@ -139,7 +142,7 @@ public class SurveyProgressIndicator extends JFrame{
             totalValue += b.toInt();
         }
         progressBar.setValue(totalValue);
-        progressBar.setString("Progress: "+((double)totalValue / (double)totalQuestions * 100.0)+"%");
+        progressBar.setString("Progress: "+((double)totalValue / (double)TOTAL_FIELDS * 100.0)+"%");
     }
 
 

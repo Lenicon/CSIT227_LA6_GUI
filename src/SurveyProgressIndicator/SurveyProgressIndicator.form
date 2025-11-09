@@ -21,7 +21,7 @@
         </properties>
         <border type="empty"/>
         <children>
-          <grid id="da187" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="da187" layout-manager="GridLayoutManager" row-count="16" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints/>
             <properties/>
@@ -29,7 +29,9 @@
             <children>
               <component id="d0c3b" class="javax.swing.JProgressBar" binding="progressBar">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="231" height="17"/>
+                  </grid>
                 </constraints>
                 <properties>
                   <borderPainted value="false"/>
@@ -40,107 +42,144 @@
               </component>
               <component id="1df6b" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
-                    <preferred-size width="32" height="28"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="231" height="28"/>
                   </grid>
                 </constraints>
                 <properties>
                   <labelFor value="6f185"/>
-                  <text value="Name:"/>
+                  <text value="Full Name:"/>
                 </properties>
               </component>
               <component id="af7a9" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="231" height="14"/>
+                  </grid>
                 </constraints>
                 <properties>
                   <labelFor value="f0642"/>
-                  <text value="Email:"/>
+                  <text value="Date of Birth:"/>
                 </properties>
-              </component>
-              <component id="6f185" class="javax.swing.JTextField" binding="nameField">
-                <constraints>
-                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="-1"/>
-                  </grid>
-                </constraints>
-                <properties/>
-              </component>
-              <component id="f0642" class="javax.swing.JTextField" binding="emailField">
-                <constraints>
-                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="28"/>
-                  </grid>
-                </constraints>
-                <properties/>
               </component>
               <vspacer id="81f4d">
                 <constraints>
-                  <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
               <component id="74537" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="1. Do you like me?"/>
+                  <text value="Gender:"/>
                 </properties>
               </component>
               <component id="cd022" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <labelFor value="64ce5"/>
-                  <text value="2. Explain why or why not."/>
-                </properties>
-              </component>
-              <component id="64ce5" class="javax.swing.JTextArea" binding="q2">
-                <constraints>
-                  <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                    <preferred-size width="150" height="50"/>
-                  </grid>
-                </constraints>
-                <properties>
-                  <margin top="2" left="5" bottom="2" right="5"/>
+                  <text value="Contact Number:"/>
                 </properties>
               </component>
               <component id="95b10" class="javax.swing.JButton" binding="submitButton" default-binding="true">
                 <constraints>
-                  <grid row="8" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="231" height="25"/>
+                  </grid>
                 </constraints>
                 <properties>
                   <text value="Submit"/>
                 </properties>
               </component>
+              <component id="b29fb" class="javax.swing.JRadioButton" binding="genderR1">
+                <constraints>
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="231" height="20"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <text value="Male"/>
+                </properties>
+              </component>
+              <component id="f0642" class="javax.swing.JTextField" binding="nameField">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="231" height="28"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="6f185" class="javax.swing.JTextField" binding="dobField">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="231" height="25"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
               <component id="f757a" class="javax.swing.JButton" binding="clearButton" default-binding="true">
                 <constraints>
-                  <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="231" height="25"/>
+                  </grid>
                 </constraints>
                 <properties>
                   <text value="Clear"/>
                 </properties>
               </component>
-              <component id="d3555" class="javax.swing.JRadioButton" binding="q1r2">
+              <component id="f4e6a" class="javax.swing.JRadioButton" binding="genderR3">
                 <constraints>
-                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="231" height="20"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="No"/>
+                  <text value="Other"/>
                 </properties>
                 <clientProperties>
                   <hideActionText class="java.lang.Boolean" value="false"/>
                   <html.disable class="java.lang.Boolean" value="false"/>
                 </clientProperties>
               </component>
-              <component id="b29fb" class="javax.swing.JRadioButton" binding="q1r1">
+              <component id="d3555" class="javax.swing.JRadioButton" binding="genderR2">
                 <constraints>
-                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="231" height="20"/>
+                  </grid>
                 </constraints>
                 <properties>
-                  <text value="Yes"/>
+                  <text value="Female"/>
                 </properties>
+                <clientProperties>
+                  <hideActionText class="java.lang.Boolean" value="false"/>
+                  <html.disable class="java.lang.Boolean" value="false"/>
+                </clientProperties>
+              </component>
+              <component id="476f9" class="javax.swing.JTextField" binding="contactField">
+                <constraints>
+                  <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="231" height="25"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="e544c" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="10" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Email Address:"/>
+                </properties>
+              </component>
+              <component id="2a005" class="javax.swing.JTextField" binding="emailField">
+                <constraints>
+                  <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="9" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="231" height="25"/>
+                  </grid>
+                </constraints>
+                <properties/>
               </component>
             </children>
           </grid>
