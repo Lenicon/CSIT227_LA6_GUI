@@ -5,6 +5,10 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.JTextComponent;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.regex.Pattern;
 
 public class CharacterCounter extends JFrame {
@@ -13,7 +17,9 @@ public class CharacterCounter extends JFrame {
 
     private JTextField specificField;
     private JLabel specificCountNum;
-    private JButton btnCaseToggle;
+
+    private MutableBoolean isCaseSensitive;
+    private JButton btnIsCaseSensitive;
 
     private JLabel wordCountNum;
     private JLabel lineCountNum;
@@ -24,7 +30,9 @@ public class CharacterCounter extends JFrame {
 
     public CharacterCounter(){
 
-        if(specificField != null) specificField.setBorder(BorderFactory.createEmptyBorder());
+//        specificField.setMargin(new Insets(7,2,0,2));
+        specificField.setBorder(new EmptyBorder(5, 10, 0, 10));
+//        specificField.setBorder(BorderFactory.createEmptyBorder());
 
         setContentPane(panelMain);
         setTitle("Character Counter (Len.icon)");
@@ -37,6 +45,27 @@ public class CharacterCounter extends JFrame {
         // Add a DocumentListener to update the count in real-time
         createUpdateCounters(textArea);
         createUpdateCounters(specificField);
+
+        // Add case sensitivity feature
+        isCaseSensitive = new MutableBoolean(true);
+        btnIsCaseSensitive.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                if (isCaseSensitive.isTrue()){
+                    // Toggle to false
+                    btnIsCaseSensitive.setBackground(new Color(19,19,24));
+                    btnIsCaseSensitive.setForeground(new Color(255,255,255));
+                    isCaseSensitive.setValue(false);
+                } else {
+                    // Toggle to false
+                    btnIsCaseSensitive.setBackground(new Color(255,255,255));
+                    btnIsCaseSensitive.setForeground(new Color(19,19,24));
+                    isCaseSensitive.setValue(true);
+                }
+
+                updateCount();
+            }
+        });
     }
 
     private void createUpdateCounters(JTextComponent tc){
@@ -57,7 +86,7 @@ public class CharacterCounter extends JFrame {
 
         long sc = 0;
         if (!specificField.getText().isBlank()){
-            Pattern pattern = Pattern.compile(specificField.getText());
+            Pattern pattern = Pattern.compile(specificField.getText(), isCaseSensitive.isTrue() ? 0 : Pattern.CASE_INSENSITIVE);
             sc = pattern.matcher(text).results().count();
         }
 
