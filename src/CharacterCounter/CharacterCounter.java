@@ -18,7 +18,7 @@ public class CharacterCounter extends JFrame {
     private JTextField specificField;
     private JLabel specificCountNum;
 
-    private MutableBoolean isCaseSensitive;
+    private final MutableBoolean isCaseSensitive;
     private JButton btnIsCaseSensitive;
 
     private JLabel wordCountNum;
